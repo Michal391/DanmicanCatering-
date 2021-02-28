@@ -1,1 +1,1 @@
-System.out.println("00");
+System.out.println("mooo");
