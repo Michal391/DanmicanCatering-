@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.temporal.Temporal;
 
 public class Event {
 
@@ -15,6 +16,7 @@ public class Event {
     }
 
     public ArrayList<Menu> menus = new ArrayList<>();
+	public Temporal event;
 
     public Event(String type, LocalDateTime eventDateTime, int adultsT, int childrenT, ArrayList<Menu> menus){
         this.type = type;
