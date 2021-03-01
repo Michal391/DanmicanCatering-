@@ -16,8 +16,8 @@ public class Bookings {
 
         Event returnVAR = new Event(eventcls);
         //check if the numebr of people is above 40 for the discount factor
-        if(eventcls./ insert method by event /() > 40){
-            returnVAR./insert method van event/();
+        if(eventcls.getGroup() > 40){
+            returnVAR.AdultDiscountMenus();
         }
        return returnVAR;
     }
@@ -31,14 +31,14 @@ public class Bookings {
 
         BookingPaid += bookingamount;
 
-        if(BookingPaid >= (BookingCost0.50) && ChronoUnit.DAYS.between(LocalDateTime.now(), eventcls./iets/) >15){
+        if(BookingPaid >= (BookingCost*0.50) && ChronoUnit.DAYS.between(LocalDateTime.now(), eventcls.event) >15){
             Bookingconfirmed = true;
         }
     }
 
     //This method will change all the booking details to a string, making it nice and neat
     @Override
-    public String BookingToString(){
+    public String BookingsToString(){
 
         StringBuilder sb = new StringBuilder();
 
@@ -52,7 +52,7 @@ public class Bookings {
         sb.append("\n");
         sb.append("Client: "+ clientcls.toString());
         sb.append("\n");
-        sb.append("Event:" + /insert getEvnet method/().toString());
+        sb.append("Event:" +  getClass().toString());
         sb.append("\n");
 
         return sb.toString();
