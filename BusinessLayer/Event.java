@@ -1,6 +1,7 @@
 package Project;
 
-public class Event {
+public class Event 
+{
     
     
 }

@@ -2,11 +2,13 @@ package Project;
 
 public class Client {
 
-    public void RegisterClient(){
+    public void RegisterClient()
+    {
 
     }
 
-    public void generateClientNumber(){
+    public void generateClientNumber()
+    {
 
     }
 
