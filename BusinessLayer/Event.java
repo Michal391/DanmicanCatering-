@@ -15,7 +15,7 @@ public class Event {
         return childrenT + adultsT;
     }
 
-    public ArrayList<Menu> menus = new ArrayList<>();
+    public ArrayList<Menu> Menus = new ArrayList<>();
 	public Temporal event;
 
     public Event(String type, LocalDateTime eventDateTime, int adultsT, int childrenT, ArrayList<Menu> menus){
@@ -23,29 +23,30 @@ public class Event {
         this.EventDateTime = eventDateTime;
         this.childrenT = childrenT;
         this.adultsT = adultsT;
-        this.menus = menus;
+        this.Menus = menus;
     }
 
     public Event(Event eventcls) {
 	}
 
 	public void AdultDiscountMenus(){
-        for(Menu menu : menus){
+        for(Menu menu : Menus){
             menu.applyAdultDiscount();
         }
     }
 
+    //This method will change all the event details to a string, making it nice and neat
     @Override
     public String toString(){
         StringBuilder ret = new StringBuilder();
         ret.append("A "+type+" Event");
         ret.append('\n');
-        ret.append("Is Scheduled for " + Event.toString() + " At:\n" + venue.toString());
+        ret.append("Is Scheduled for " + EventDateTime.toString() + " At:\n" + venue.toString());
         ret.append("\n\n");
         ret.append( String.format("%s people will be present. (%s kids and %s adults)", getGroup(), childrenT, adultsT) );
         ret.append('\n');
         ret.append("The menus are:");
-        for (Menu menu : menus) {
+        for (Menu menu : Menus) {
             ret.append('\n');
             ret.append(menu.toString());
         }

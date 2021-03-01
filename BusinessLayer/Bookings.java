@@ -43,7 +43,7 @@ public class Bookings {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Booking:esadsad "+ BookingCode);
+        sb.append("Booking: "+ BookingCode);
         sb.append("\n");
         sb.append("Cost: "+BookingCost);
         sb.append("\n");
