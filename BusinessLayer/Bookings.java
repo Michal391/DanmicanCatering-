@@ -1,21 +1,26 @@
 package Project;
 
-public class Bookings {
+public class Bookings 
+{
 
 
-    public void makeBooking(){
-
-    }
-
-    public void bookingAvailable(){
+    public void makeBooking()
+    {
 
     }
 
-    public void checkBookings(){
+    public void bookingAvailable()
+    {
+
+    }
+
+    public void checkBookings()
+    {
 
     }
     
-    public void updateBooking(){
+    public void updateBooking()
+    {
 
     }
 
