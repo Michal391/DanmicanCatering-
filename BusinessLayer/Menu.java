@@ -36,7 +36,7 @@ public class Menu {
     }
 
     public void SetAdults(){
-        isAdultMenu = true;
+        AdultMenu = true;
     }
 
     public void AddMenuItem(String menuitem, Double menuprice){
@@ -56,14 +56,14 @@ public class Menu {
 
     public boolean ApplyAdultDiscount(){
         if(Boolean.TRUE.equals(AdultMenu)){
-            applyDiscount(15.0);
+            ApplyDiscount(15.0);
             return true;
         }
         return false;
     }
 
     @Override
-    public String ToString(){
+    public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(title +'\n');
 

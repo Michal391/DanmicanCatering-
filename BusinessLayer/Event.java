@@ -31,7 +31,7 @@ public class Event {
 
 	public void AdultDiscountMenus(){
         for(Menu menu : Menus){
-            menu.applyAdultDiscount();
+            menu.ApplyAdultDiscount();
         }
     }
 
@@ -41,7 +41,7 @@ public class Event {
         StringBuilder ret = new StringBuilder();
         ret.append("A "+type+" Event");
         ret.append('\n');
-        ret.append("Is Scheduled for " + EventDateTime.toString() + " At:\n" + venue.toString());
+        ret.append("Is Scheduled for " + EventDateTime.toString());
         ret.append("\n\n");
         ret.append( String.format("%s people will be present. (%s kids and %s adults)", getGroup(), childrenT, adultsT) );
         ret.append('\n');

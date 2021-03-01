@@ -39,7 +39,7 @@ public class Bookings {
 
     //This method will change all the booking details to a string, making it nice and neat
     @Override
-    public String BookingsToString(){
+    public String toString(){
 
         StringBuilder sb = new StringBuilder();
 
