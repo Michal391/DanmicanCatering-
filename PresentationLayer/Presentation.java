@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import org.graalvm.compiler.asm.aarch64.AArch64Assembler.SystemHint;
+
 import BusinessLayer.Client;
 
 
@@ -9,6 +11,7 @@ public class Presentation {
 
         while(true){
             Client cl = new Client();
+            Bookings bk = new Bookings();
 
         Scanner scr = new Scanner(System.in);
         System.out.println("Welcome to Delicious-Catering");
@@ -38,6 +41,11 @@ public class Presentation {
                 break;
             //bla bla bla
             case 2:
+            System.out.print("Any bookings made? Y / N ");
+            String BookAnswer = scr.nextLine();
+            if(BookAnswer == "Y"){
+                
+            }
                 break;
             
             case 0:
