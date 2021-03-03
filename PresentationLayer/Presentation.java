@@ -6,7 +6,7 @@ import BusinessLayer.Client;
 
 
 public class Presentation {
-    
+   
     public static void main(String[] args){
 
         while(true){
@@ -32,8 +32,14 @@ public class Presentation {
 
             String regAnswer = scr.nextLine();
 
-            if(regAnswer == "Y"){
-                //booking methods
+            if(regAnswer == "Y")
+            {
+                System.out.print("Any bookings made? Y / N ");
+                String BookAnswer = scr.nextLine();
+            
+                if(BookAnswer == "Y"){
+                
+            }
             }
             else if(regAnswer == "N"){
                 cl.RegisterClient();
@@ -41,11 +47,7 @@ public class Presentation {
                 break;
             //bla bla bla
             case 2:
-            System.out.print("Any bookings made? Y / N ");
-            String BookAnswer = scr.nextLine();
-            if(BookAnswer == "Y"){
-                
-            }
+            
                 break;
             
             case 0:
