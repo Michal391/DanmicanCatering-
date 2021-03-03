@@ -22,6 +22,17 @@ public class Catering
         return options;
     }
 
+
+    public List<Booking> GetBookingDataFromFile(){
+
+        FileOutputStream  = new FileOutputStream("BookingDetails.ser");
+        
+    }
+    
+    public Void AddBookingsToFile(List<Booking> allBookings){
+        
+    }
+    
     
 
 
