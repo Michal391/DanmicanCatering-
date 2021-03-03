@@ -1,12 +1,22 @@
 import java.util.*;
 import java.io.*;
 
+import PresentationLayer.*;
+
 
 public class Client {
 
     private String Fname;
     private String Lname;
     private String Phonenumber;
+
+    public Client(String FirstName, String LastName, String PhoneNum){
+
+        this.Fname = FirstName;
+        this.Lname = LastName;
+        this.Phonenumber = PhoneNum;
+
+    }
 
     public String getfname() {
         return Fname;
@@ -20,7 +30,7 @@ public class Client {
         return Lname;
     }
 
-    public void setlame(String Lname){
+    public void setlname(String Lname){
         this.Lname = Lname;
     }
 
@@ -35,7 +45,7 @@ public class Client {
     //change the client details into 1 string 
     @Override
     public String toString(){
-        return "Client first name="+Fname+",Client last name="+Lname+",Phonenumber="+Phonenumber;
+        return "Client first name="+getfname()+",Client last name="+getlname()+",Phonenumber="+getphonenumber();
     }
 
     //Check if everything is good
@@ -64,5 +74,51 @@ public class Client {
         } else if (!Phonenumber.equals(other.Phonenumber))
             return false;
         return true;
+    }
+
+    public void RegisterClient() throws FileNotFoundException{
+
+        boolean valid = false;
+        Client cl = new Client();
+
+        while (valid = false){
+            System.out.print("\033[H\033[2J");  
+            System.out.flush();
+
+            Scanner scr = new Scanner(System.in);
+
+            System.out.println("To register: Enter your name");
+    
+            String fname = scr.nextLine();
+            setfname(fname);
+    
+            System.out.println("To register: Enter your surname");
+    
+            String lname = scr.nextLine();
+            setlname(lname);
+    
+            System.out.println("To register: Enter your phone number");
+    
+            String fphone = scr.nextLine();
+            setphonenumber(fphone);
+            
+            boolean testDetails = equals(cl);
+
+            if (testDetails = true){
+                try (PrintWriter out = new PrintWriter("ClientInfo.txt")) {
+                    out.println(toString());
+                }
+
+                System.out.println("Registration complete!");
+                break;
+            }
+            else
+            {
+                System.out.println("Validation failed, try again!");
+            }
+            
+        }
+
+
     }
 }
