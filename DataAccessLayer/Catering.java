@@ -4,6 +4,15 @@ import java.util.*;
 
 public class Catering 
 {
+    private String type;
+    private String date;
+    private String venueAddress;
+    private int numadults;
+    private int numkids;
+    private String food;
+    private Boolean  deco;
+
+
     public List<CateringOptions> GetOptions() 
     {
         List<CateringOptions> options = new ArrayList<CaterienOptions>();
@@ -21,17 +30,23 @@ public class Catering
         }
         return options;
     }
+    //nuut 
+    public void Booking(String type, String date, String venueAddress, int numadults, int numkids, String food,
+            Boolean deco) {
 
-
-    public List<Booking> GetBookingDataFromFile(){
-
-        FileOutputStream  = new FileOutputStream("BookingDetails.ser");
-        
+        this.type = type;
+        this.date = date;
+        this.venueAddress = venueAddress;
+        this.numadults = numadults;
+        this.numkids = numkids;
+        this.food = food;
+        this.deco = deco;
     }
+
     
-    public Void AddBookingsToFile(List<Booking> allBookings){
-        
-    }
+
+
+  
     
     
 
