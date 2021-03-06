@@ -19,7 +19,7 @@ public class Client {
     }
 
     public String getfname() {
-        return Fname;
+        return Fname;//iets
     }
 
     public void setfname(String Fname) {
