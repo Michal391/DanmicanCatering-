@@ -76,15 +76,14 @@ public class Client {
         return true;
     }
 
-    public void RegisterClient() throws FileNotFoundException{
+    public Client RegisterClient() throws FileNotFoundException{
 
         boolean valid = false;
         Client cl = new Client();
     
 
+
         while (valid = false){
-            System.out.print("\033[H\033[2J");  
-            System.out.flush();
 
             Scanner scr = new Scanner(System.in);
 
