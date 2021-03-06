@@ -104,15 +104,12 @@ public class Client {
             setphonenumber(fphone);
             
             boolean testDetails = equals(cl);
+            System.out.println("Registration complete!");
 
-            if (testDetails = true){
+            /*if (testDetails = true){
 
                 System.out.println(toString());
-                //public String EventType;
-    //public String EventDateTime;
-    //public int adultsNum;
-    //public int childrenNum;
-    //public String deco;
+               
 
                 try (PrintWriter out = new PrintWriter("ClientInfo.txt")) {
                     out.println(getfname()+"@"+getlname()+"@"+getphonenumber());
@@ -125,7 +122,7 @@ public class Client {
             else
             {
                 System.out.println("Validation failed, try again!");
-            }
+            }*/
             
         }
 

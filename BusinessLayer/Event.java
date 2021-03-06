@@ -62,8 +62,7 @@ public class Event {
         Event evnt = new Event();
 
         while(valid = false){
-            System.out.print("\033[H033[2J");
-            System.out.flush();
+
 
             Scanner scr = new Scanner(System.in);
 
@@ -89,7 +88,9 @@ public class Event {
 
             boolean TestEventDetails = equals(evnt);
 
-            if(TestEventDetails = true) {
+            System.out.println("Event created :)");
+
+            /*if(TestEventDetails = true) {
                 System.out.println(toString());
 
                 try (PrintWriter out = new PrintWriter("EventInfo.txt")){
@@ -102,7 +103,7 @@ public class Event {
             }
             else{
                 System.oyt.println("Validation failed.");
-            }
+            }*/
 
 
 
