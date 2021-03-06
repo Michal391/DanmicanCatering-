@@ -1,5 +1,5 @@
-1.Cheese burgers with Magnum ice cream.
-2.Mince and rice with Caramel treat.
-3.Steak and Salad with Italian Kisses
-4.Lasagne with Triple Chocolate Cupcakes
+1.Cheese burgers with Magnum ice cream,50
+2.Mince and rice with Caramel treat,69
+3.Steak and Salad with Italian Kisses,420
+4.Lasagne with Triple Chocolate Cupcakes,666
 
