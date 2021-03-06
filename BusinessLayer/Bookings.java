@@ -10,7 +10,6 @@ public class Bookings {
     public Double BookingPaid;
 
     public Client clientcls;
-
     private Event eventcls;
 
     public Event getEventMethod(){

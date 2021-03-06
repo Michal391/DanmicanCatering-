@@ -80,6 +80,7 @@ public class Client {
 
         boolean valid = false;
         Client cl = new Client();
+    
 
         while (valid = false){
             System.out.print("\033[H\033[2J");  
@@ -107,6 +108,11 @@ public class Client {
             if (testDetails = true){
 
                 System.out.println(toString());
+                //public String EventType;
+    //public String EventDateTime;
+    //public int adultsNum;
+    //public int childrenNum;
+    //public String deco;
 
                 try (PrintWriter out = new PrintWriter("ClientInfo.txt")) {
                     out.println(getfname()+"@"+getlname()+"@"+getphonenumber());

@@ -7,9 +7,10 @@ public class Event {
 
     public String EventType;
     public String EventDateTime;
-
     public int adultsNum;
     public int childrenNum;
+    public String deco;
+
 
     public int TotalPeople(){
         return childrenNum + adultsNum;
@@ -18,11 +19,12 @@ public class Event {
     public ArrayList<Menu> Menus = new ArrayList<>();
 	public Temporal event;
 
-    public Event(String EventType, String eventDateTime, int adultsNum, int childrenNum, ArrayList<Menu> menus){
+    public Event(String EventType, String eventDateTime, int adultsNum, int childrenNum, String deco, ArrayList<Menu> menus){
         this.EventType = EventType;
         this.EventDateTime = eventDateTime;
         this.childrenNum = childrenNum;
         this.adultsNum = adultsNum;
+        this.deco = deco;
         this.Menus = menus;
     }
 
@@ -52,6 +54,60 @@ public class Event {
         }
 
         return ret.toString();
+    }
+
+    public void RegisterEvent() throws FileNotFoundException{
+        
+        boolean valid = false;
+        Event evnt = new Event();
+
+        while(valid = false){
+            System.out.print("\033[H033[2J");
+            System.out.flush();
+
+            Scanner scr = new Scanner(System.in);
+
+            System.out.println("Enter Type of event");
+            String EventType = scr.nextLine();
+            setEventType(EventType);
+
+            System.out.println("Enter the event date and time");
+            String EventDateTime = scr.nextLine();
+            setEventDateTime(EventDateTime);
+
+            System.out.println("Enter number of adults");
+            int adultsNum = scr.nextLine();
+            setadultnum(adultsNum);
+
+            System.out.println("Enter number of children");
+            int childrenNum = scr.nextLine();
+            setchildrenNum(childrenNum);
+
+            System.out.println("Decorations?");
+            String deco = scr.nextLine();
+            setdeco(deco);
+
+            boolean TestEventDetails = equals(evnt);
+
+            if(TestEventDetails = true) {
+                System.out.println(toString());
+
+                try (PrintWriter out = new PrintWriter("EventInfo.txt")){
+                    out.println(getEventType() + "@" + getEventDateTime() + "@" + getadultNum() + "@" + getchildrenNum() + "@" + getdeco());
+                }
+
+                System.out.println("Event created :)");
+                valid = true;
+                break;
+            }
+            else{
+                System.oyt.println("Validation failed.");
+            }
+
+
+
+
+        }
     }
         
 }
