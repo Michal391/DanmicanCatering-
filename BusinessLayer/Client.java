@@ -105,11 +105,15 @@ public class Client {
             boolean testDetails = equals(cl);
 
             if (testDetails = true){
+
+                System.out.println(toString());
+
                 try (PrintWriter out = new PrintWriter("ClientInfo.txt")) {
-                    out.println(toString());
+                    out.println(getfname()+"@"+getlname()+"@"+getphonenumber());
                 }
 
                 System.out.println("Registration complete!");
+                valid = true;
                 break;
             }
             else
@@ -121,4 +125,24 @@ public class Client {
 
 
     }
+    public List<Client> ViewClients() throws FileNotFoundException, IOException
+	{
+		List<Client> clientlist = new ArrayList<Client>();
+		
+		File file = new File("ClientInfo.txt");
+		Scanner sc = new Scanner(file);
+		
+		if(file.exists())
+		{
+			while(sc.hasNextLine())
+			{
+				String[] line = sc.nextLine().split("@");
+				clientlist.add(new Client(line[0], line[1], line[2]));
+			}
+			
+			return clientlist;
+		}
+		else
+			return null;
+	}
 }

@@ -39,29 +39,44 @@ public class Presentation {
             else if(regAnswer == "N"){
                 cl.RegisterClient();
             }
+            System.out.print("Have you made a booking? Y / N ");
+            String BookAnswer = scr.nextLine();
+        
+            if(BookAnswer == "Y"){
+                List<Booking> Booking1 = new ArrayList<Booking>();
+
+                System.out.println("--------------------------------------------------------------------");
+                System.out.println("Type Event\tDate\tVenue Address\tTotalAdults\tTotalKids\tFood choice \tDecorations");
+                System.out.println("--------------------------------------------------------------------");
+
+                for (Booking item : Booking1) {
+                    System.out.println(item.type + "\t" + item.date + "\t\t" + item.venueAddress + "\t" + item.numadults + "\t" + item.numkids + "\t" + item.food + "\t" + item.deco);
+                }
+
+                System.out.println("--------------------------------------------------------------------");
+        
+        }
                 break;
-            //bla bla bla
-            //Weereens ek weet nie of dit onder case 2 of 1 kom nie. Volgens my(Wian) moet die eienaar kan sien wat die bookings al is. Ons moet net nog code hoe die bookings in n list in gaan en dan na n file toe
+
             case 2:
-            System.out.print("Any bookings made? Y / N ");
-                String BookAnswer = scr.nextLine();
-            
-                if(BookAnswer == "Y"){
-                    List<Booking> Booking1 = new ArrayList<Booking>();
+            System.out.print("\033[H\033[2J");  
+            System.out.flush();
 
-                    System.out.println("--------------------------------------------------------------------");
-                    System.out.println("Type Event\tDate\tVenue Address\tTotalAdults\tTotalKids\tFood choice \tDecorations");
-                    System.out.println("--------------------------------------------------------------------");
+            System.out.println("Welcome to the Owner page:");
 
-                    for (Booking item : Booking1) {
-                        System.out.println(item.type + "\t" + item.date + "\t\t" + item.venueAddress + "\t" + item.numadults + "\t" + item.numkids + "\t" + item.food + "\t" + item.deco);
-                    }
+            System.out.println("What do you want to view? \n1. All the clients \n2. All the bookings");
 
-                    System.out.println("--------------------------------------------------------------------");
-            
+            String ownerAnswer = scr.nextLine();
+
+            if (ownerAnswer == "1"){
+
             }
+            else if (ownerAnswer == "2"){
+                
+            }
+
+
                 break;
-            
             case 0:
                 break;
         }

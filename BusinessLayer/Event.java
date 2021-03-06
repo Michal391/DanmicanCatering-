@@ -5,24 +5,24 @@ import java.time.temporal.Temporal;
 
 public class Event {
 
-    public String type;
-    public LocalDateTime EventDateTime ;
+    public String EventType;
+    public String EventDateTime;
 
-    public int adultsT;
-    public int childrenT;
+    public int adultsNum;
+    public int childrenNum;
 
-    public int getGroup(){
-        return childrenT + adultsT;
+    public int TotalPeople(){
+        return childrenNum + adultsNum;
     }
 
     public ArrayList<Menu> Menus = new ArrayList<>();
 	public Temporal event;
 
-    public Event(String type, LocalDateTime eventDateTime, int adultsT, int childrenT, ArrayList<Menu> menus){
-        this.type = type;
+    public Event(String EventType, String eventDateTime, int adultsNum, int childrenNum, ArrayList<Menu> menus){
+        this.EventType = EventType;
         this.EventDateTime = eventDateTime;
-        this.childrenT = childrenT;
-        this.adultsT = adultsT;
+        this.childrenNum = childrenNum;
+        this.adultsNum = adultsNum;
         this.Menus = menus;
     }
 
@@ -39,11 +39,11 @@ public class Event {
     @Override
     public String toString(){
         StringBuilder ret = new StringBuilder();
-        ret.append("A "+type+" Event");
+        ret.append("A "+EventType+" Event");
         ret.append('\n');
         ret.append("Is Scheduled for " + EventDateTime.toString());
         ret.append("\n\n");
-        ret.append( String.format("%s people will be present. (%s kids and %s adults)", getGroup(), childrenT, adultsT) );
+        ret.append( String.format("%s people will be present. (%s kids and %s adults)", TotalPeople(), childrenNum, adultsNum) );
         ret.append('\n');
         ret.append("The menus are:");
         for (Menu menu : Menus) {
