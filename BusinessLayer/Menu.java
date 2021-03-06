@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class Menu {
+    DataHandler dh = new DataHandler();
     private String title;
     List<String> MenuItems = new ArrayList<>();
     List<Double> MenuPrices = new ArrayList<>();
@@ -74,6 +76,55 @@ public class Menu {
 
         return sb.toString();
     }
+
+    public void CreateMenu(){
+        String[] menuarr;
+        boolean menuNotFinished = false;
+        List<String> menuI = new ArrayList<String>();
+        menuI = dh.GetMenu();
+        Scanner scr = new Scanner(System.in);
+        String food = "";
+        double price ;
+        
+
+        while(menuNotFinished == true ){
+            
+            for(String menuitem : menuI){
+                menuarr = menuitem.split(",");
     
+                System.out.println(menuarr[0]+" R"+menuarr[1]);
     
+            }
+
+            System.out.println("Choose and option to add to the menu OR press 5 to close");
+            int menuOption = scr.nextInt();
+
+            switch(menuOption){
+                case 1:
+                MenuItems.add("Cheese burgers with Magnum ice cream");
+                MenuPrices.add(49.99);
+                break;
+                
+                case 2:
+                MenuItems.add("Mince and rice with Caramel treat");
+                MenuPrices.add(69.99);
+                break;
+
+                case 3:
+                MenuItems.add("Steak and Salad with Italian Kisses");
+                MenuPrices.add(420.99);
+                break;
+
+                case 4:
+                MenuItems.add("Lasagne with Triple Chocolate Cupcakes");
+                MenuPrices.add(666.99);
+                break;
+
+                case 5:
+                menuNotFinished = false;
+                break;
+
+            }
+        }
+    }
 }
