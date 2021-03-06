@@ -16,7 +16,7 @@ public class Event {
         return childrenNum + adultsNum;
     }
 
-    public ArrayList<Menu> Menus = new ArrayList<>();
+    public Menus Menus;
 	public Temporal event;
 
     public Event(String EventType, String eventDateTime, int adultsNum, int childrenNum, String deco, ArrayList<Menu> menus){
@@ -85,6 +85,10 @@ public class Event {
             System.out.println("Decorations?");
             String deco = scr.nextLine();
             setdeco(deco);
+
+            Menu men = new Menu();
+            men.CreateMenu();
+            this.Menus = men;
 
             boolean TestEventDetails = equals(evnt);
 

@@ -1,6 +1,14 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.*;
+
+
+import BusinessLayer.AllBookings;
 
 public class DataHandler 
 {
@@ -42,13 +50,28 @@ public class DataHandler
         this.deco = deco;
     }
 
+    public void SavedBookings(List<AllBookings> listofbookings) {
 
-    
+        FileOutputStream fos = new FileOutputStream("ListOfAllBookings.ser");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(listofbookings);
 
+        oos.close();
+        fos.close();
 
-  
-    
-    
+    }
 
+    public List<AllBookings> GetBookings(){
+
+        FileInputStream fis = new FileInputStream("ListOfAllBookings.ser");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+
+            if (fis.available() != -1) {
+                return   (List<AllBookings>)ois.readObject();
+            }
+            
+            fis.close();
+            ois.close();
+    }
 
 }

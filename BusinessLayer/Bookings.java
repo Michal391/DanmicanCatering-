@@ -8,7 +8,6 @@ public class Bookings {
     private boolean Bookingconfirmed = false;
     public Double BookingCost;
     public Double BookingPaid;
-
     public Client clientcls;
     private Event eventcls;
 

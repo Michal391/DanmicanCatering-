@@ -5,9 +5,7 @@ import java.util.List;
 import DataAccessLayer.Booking;
 public class AllBookings {
 
-    Bookings Bookings1 = new Bookings();
-    Bookings1.clientcls.fname;
-    Bookings1.eventcls.EventType;
+    List<Bookings> ABookings = new ArrayList<Bookings>();
 
     public List<Booking> BookingsMade(){
 
@@ -17,25 +15,13 @@ public class AllBookings {
 
     }
 
-    try{
-        FileOutputStream fos = new FileOutputStream(/*Location of booking textfile */);
-        ObjectInputStream oos = new ObjectInputStream(fos);
+    DataHandler dh = new DataHandler();
 
-        //Weet nie of die nodig is nie 
-        for (Booking item : Booking1){
-            oos.writeObject(item);
-            oos.reset();
-        }
-
-        oos.close();
-        fos.close();
+    public void getBookings(){
+        this.ABookings = dh.getBookings();
     }
 
-    catch (Exception e){
-        System.out.println("Error" + e);
+    public void saveBookings(){
+        dh.saveBookings(ABookings);
     }
-    return Booking1;
-
-
-}
 }

@@ -9,9 +9,12 @@ public class Presentation {
    
     public static void main(String[] args){
 
+        Client cl = new Client();
+        Event ev = new Event();
+        AllBookings ListOfBookings = new AllBookings();
+        ListOfBookings.getBookings();
         while(true){
-            Client cl = new Client();
-            Bookings bk = new Bookings();
+            
 
         Scanner scr = new Scanner(System.in);
         System.out.println("Welcome to Delicious-Catering");
@@ -23,8 +26,6 @@ public class Presentation {
         switch(pageOption){
 
             case 1:
-            System.out.print("\033[H\033[2J");  
-            System.out.flush();
 
             System.out.println("Welcome to the Client page:");
 
@@ -38,6 +39,25 @@ public class Presentation {
             }
             else if(regAnswer == "N"){
                 cl.RegisterClient();
+                ev.RegisterEvent();
+                Boolean confirmed = false;
+                Random r = new Random();
+                int low = 1;
+                int high =  1000000;
+                int BookingCode = r.nextInt(high-low) + low;
+                
+                System.out.println("How much will the booking cost?");
+                Double BookingCost = scr.nextLine();
+
+                System.out.println("How much did you pay?");
+                Double BookingPaid = scr.nextLine();
+                if(BookingPaid >= 0.5*BookingCost){
+                    confirmed = true;
+
+                }
+                
+                ListOfBookings.add(new Bookings(BookingCode, confirmed, BookingCost, BookingPaid, cl, ev));
+                ListOfBookings.saveBookings();
             }
             System.out.print("Have you made a booking? Y / N ");
             String BookAnswer = scr.nextLine();
@@ -59,8 +79,6 @@ public class Presentation {
                 break;
 
             case 2:
-            System.out.print("\033[H\033[2J");  
-            System.out.flush();
 
             System.out.println("Welcome to the Owner page:");
 
