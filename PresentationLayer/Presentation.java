@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import org.graalvm.compiler.asm.aarch64.AArch64Assembler.SystemHint;
-
 import BusinessLayer.Client;
 
 
@@ -87,10 +85,18 @@ public class Presentation {
             String ownerAnswer = scr.nextLine();
 
             if (ownerAnswer == "1"){
-
+            
+                for(Bookings booking: ListOfBookings)
+                {
+                    System.out.println(booking.clientcls);
+                }
             }
             else if (ownerAnswer == "2"){
-                
+
+                for(Bookings booking: ListOfBookings)
+                {
+                    System.out.println(booking);
+                }  
             }
 
 
