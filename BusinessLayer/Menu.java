@@ -7,26 +7,12 @@ public class Menu {
     private String title;
     List<String> MenuItems = new ArrayList<>();
     List<Double> MenuPrices = new ArrayList<>();
+    boolean AdultMenu = true;
 
-    private Boolean AdultMenu = false;
 
-    Menu(String title){
-        this.title = title;
-    }
-
-    public Menu(String title, List<String> menuitems, List<Double> menuprices, Boolean isAdultMenu) {
-        this.title = title;
+    public Menu(List<String> menuitems, List<Double> menuprices) {
         this.MenuItems = menuitems;
         this.MenuPrices = menuprices;
-        this.AdultMenu = isAdultMenu;
-    }
-
-    public String GetTitle() {
-        return title;
-    }
-
-    public void SetTitle(String title) {
-        this.title = title;
     }
 
     public List<String> GetItems() {
@@ -35,10 +21,6 @@ public class Menu {
 
     public List<Double> GetPrices() {
         return MenuPrices;
-    }
-
-    public void SetAdults(){
-        AdultMenu = true;
     }
 
     public void AddMenuItem(String menuitem, Double menuprice){
